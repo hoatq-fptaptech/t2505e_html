@@ -1,0 +1,29 @@
+h1{
+    color: aquamarine;
+}
+p{
+    color: #1414a0;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify; /* left right center justify */
+    font-family: Arial;
+    font-weight: 400;
+    /* thin-100 extra-thin:200 light-300 normal-400 
+    medium-500 semi-bold-600 bold-700 extra-bold 800. black 900 */
+    text-decoration: none; /* underline line-through overline */
+    text-transform: none; /* uppercase lowercase capitalize none */
+    width: 600px;
+    font-style: italic;
+    word-spacing: 0.5px;
+    background-color: #faebd7;
+    border-bottom: 2px solid yellow;
+}
+a{
+    color: rgb(255, 20, 147);
+    text-decoration: none;
+}
+body{
+    background-color: #f0f8ff;
+    background-image: url("../images/demo.webp");
+    background-size: cover;
+}
