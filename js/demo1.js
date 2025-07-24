@@ -82,8 +82,20 @@ phep_nhan(7,3);
 // một số hàm hay dùng
 //alert("Bạn chưa đủ 18 tuổi truy cập website"); // return void
 //confirm("Cam đoan rằng bạn đã trên 18 tuổi?"); // return boolean
-if(confirm("Cam đoan rằng bạn đã trên 18 tuổi?")){
-    alert("Chào mừng bạn gia nhập cộng đồng.");
-}else{
-    alert("Vui lòng thoát khỏi website và chờ đủ tuổi.");
-}
+// if(confirm("Cam đoan rằng bạn đã trên 18 tuổi?")){
+//     var s = prompt("Vui lòng nhập tên của bạn:"); // return string
+//     var t = prompt("Bạn bao nhiêu tuổi?"); // string
+//     alert("Xin chào "+s);
+// }else{
+//     alert("Vui lòng thoát khỏi website và chờ đủ tuổi.");
+// }
+
+// 
+var r = Math.random(); // return number -> double/float 0->1: vd: 0.127291
+r = r * 100; // 12.7291
+r = parseInt(r); // 12
+// LUCKY NUMBER
+// tạo 1 số ngẫu nhiên từ 0->99 (<100)
+// cho người chơi nhập số dự đoán của mình
+// và nhập số tiền muốn đầu tư -> lợi nhuận x70
+// đối chiếu và thông báo kết quả trúng thưởng hay không
