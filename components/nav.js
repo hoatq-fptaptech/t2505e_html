@@ -1,5 +1,19 @@
-function NavComponent(){
-    return `
+async function NavComponent(){
+    const url = `https://dummyjson.com/product/categories?limit=5`;
+    var ul = ``;
+    try{
+        const rs = await fetch(url);
+        const data = await rs.json();
+        
+        data.map(e=>{
+            ul += `<li class="nav-item">
+                <a class="nav-link" href="#">${e.name}</a>
+                </li>`;
+        });
+    }catch(err){
+        
+    }
+    const html =  `
          <div class="container">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,26 +21,7 @@ function NavComponent(){
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" aria-disabled="true">Cart</a>
-                </li>
+                ${ul}
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
@@ -43,8 +38,9 @@ function NavComponent(){
             </div>
         </div>
     `;
+    const navs = document.getElementsByClassName("nav-component");// array
+    for(var i=0;i<navs.length;i++){
+        navs[i].innerHTML = html;
+    }
 }
-const navs = document.getElementsByClassName("nav-component");// array
-for(var i=0;i<navs.length;i++){
-    navs[i].innerHTML = NavComponent();
-}
+NavComponent();
